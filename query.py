@@ -34,7 +34,7 @@ def view_patient(patient_id:str=Path(...,description='ID of patient in a Databas
 
 # Query parameter 
 
-## build a query parameter of sorting the patients on their weights and hight or bmi in ascending or descending order 
+## build a query parameter of sorting the patients based on their weights and hight or bmi in ascending or descending order 
 
 @app.get('/sort')
 def sort_patient(sort_by:str=Query(...,description='Sort on the basis of height,weight or bmi '),order:str=Query('asc',description='Sort values in the asc or desc order')):
@@ -42,7 +42,7 @@ def sort_patient(sort_by:str=Query(...,description='Sort on the basis of height,
     if sort_by  not in  valid_field:
         raise HTTPException(status_code=400,detail=f'Invalid field select from {valid_field}')
     if order not in ['asc','desc']:
-        raise HTTPException(status_code=404,detail='Invalid field choosed , choose from asc or desc')
+        raise HTTPException(status_code=400,detail='Invalid field choosed , choose from asc or desc')
     
     data = loadData()
     set_order = True if order=='desc' else False
