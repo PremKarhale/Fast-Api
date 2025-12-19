@@ -1,17 +1,17 @@
 ## Pydentic class is uded to check the text error or Data validation error 
-
+#Field is used for the custom data validation & to attach the meta data using Annotate
 from pydantic import BaseModel,EmailStr,AnyUrl,Field
-from typing import List,Dict,Optional
+from typing import List,Dict,Optional,Annotated
 
 #Pydentic class
 class Patient(BaseModel):
     #Fields
-    name:str=Field(max_length=50)
+    name:Annotated[str,Field(max_length=50,title='Write the name of the patient ',description='name should not be greater than 50 ',examples=['Prem','Nitish'])]
     age:int=Field(gt=0 , lt=120)
     Email:EmailStr
     Linkdin_ID:AnyUrl
     weight:float=Field(gt=0)
-    married:Optional[bool] = False # default set 
+    married:Annotated[bool,Field(default=False,description='is the patient married or not ')]
     allergies:Optional[List[str]]= None # default set 
     contact_details:Dict[str,str]
 
