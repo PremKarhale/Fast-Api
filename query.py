@@ -10,7 +10,7 @@ app = FastAPI()
 
 @app.get("/")  # 1st route define 
 def hello():
-    return {'message':'Patient Management System API'}
+    return {'message':'Patient Management System'}
 
 @app.get('/about') #2nd route 
 def about():
