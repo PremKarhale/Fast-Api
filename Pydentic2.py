@@ -1,5 +1,6 @@
 ## Pydentic class is uded to check the text error or Data validation error 
-#Field is used for the custom data validation & to attach the meta data using Annotate
+#Field is used for the custom data validation & to attach the meta data using Annotated
+
 from pydantic import BaseModel,EmailStr,AnyUrl,Field
 from typing import List,Dict,Optional,Annotated
 
