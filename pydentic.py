@@ -1,3 +1,7 @@
+
+# Basic working of Pydentic 
+# pydentic is used for text validation or data validation 
+
 from pydantic import BaseModel
 
 class Patient(BaseModel):     ##Pydentic class 
