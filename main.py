@@ -1,6 +1,6 @@
-from fastapi import FastAPI,Path,HTTPException
+from fastapi import FastAPI
 import json
-from routes import patients , view
+from routes import patients 
 
 def loadData():
     with open('patient.json','r',encoding="utf-8") as f:
@@ -17,8 +17,5 @@ def hello():
 def about():
     return {'message':'Here we design fully functional API for your Patient Records Managemnt'}
 
-
-
-
+#Routers add
 app.include_router(patients.router)
-app.include_router(view.router)
