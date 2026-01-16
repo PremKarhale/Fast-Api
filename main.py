@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 import json
-from routes import patients 
+from routes import patients,model
 
 def loadData():
     with open('patient.json','r',encoding="utf-8") as f:
@@ -19,3 +19,4 @@ def about():
 
 #Routers add
 app.include_router(patients.router)
+app.include_router(model.router)
