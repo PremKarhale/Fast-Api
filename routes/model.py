@@ -4,9 +4,9 @@ import pandas as pd
 from schemas import userInput
 from fastapi.responses import JSONResponse
 
-#importing ml model 
+#importing ml model / Creating Ml model
 with open("model.pkl" , "rb") as f:
-    model = pickle.load(f) # this created my model
+    model = pickle.load(f) 
 
 router = APIRouter()
 
